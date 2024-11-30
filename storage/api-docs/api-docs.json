@@ -1,0 +1,52 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Sekolah",
+        "version": "1.0"
+    },
+    "paths": {
+        "/login": {
+            "post": {
+                "summary": "Login",
+                "operationId": "67d6d0fdd54fba132e1b6f55ca254183",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Berhasil login"
+                    },
+                    "401": {
+                        "description": "Kredensial salah"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "LoginRequest": {
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "device_name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
